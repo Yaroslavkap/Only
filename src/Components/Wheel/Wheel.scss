@@ -1,0 +1,177 @@
+$line-color: rgb(221,225,233);
+$line-thickness: 1px;
+$mainColor: rgb(244,245,249);
+
+
+.DatesWheel {
+    // position: absolute;
+    transform: rotate(0deg);
+    position: relative;
+    width: 50vh;
+    height: 50vh;
+    border: $line-thickness solid $line-color;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 100;
+
+    .dot {
+        position: absolute;
+        // width: 10px;
+        // height: 10px;
+        // width: 7px;
+        // height: 7px;
+        // background: rgb(66,86,122);
+        // border: none;
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: $mainColor;
+        border-radius: 50%;
+        top: 100%;
+        left: 50%;
+        transform-origin: 0 -25vh;
+
+        border: $line-thickness solid $line-color;
+        z-index: 101;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // z-index: 999999;
+    }
+
+    // .dot:nth-child(1) {
+    //     width: 2.5rem;
+    //     height: 2.5rem;
+    //     background-color: $mainColor;
+    //     border: $line-thickness solid $line-color;
+
+    // }
+
+    .dotZero {
+        // width: 7px;
+        // height: 7px;
+        // background: rgb(66,86,122);
+        width: 1px;
+        height: 1px;
+        border: none;
+        background: transparent;
+        color: transparent;
+        position: absolute;
+        
+        cursor: pointer;
+        transition: width 0.5s, height 0.5s;
+
+        &:hover {
+            background: $mainColor;
+            border: $line-thickness solid $line-color;
+            color: transparent;
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+    }
+
+    .dotContent {
+        transform: rotate(-210deg); // Противоположный поворот
+        text-align: center;
+        
+        // display: none;
+    }
+
+    // .dotContent:nth-child(1) {
+    //     transform: rotate(-210deg); // Противоположный поворот
+    //     text-align: center;
+    //     display: flex;
+    // }
+
+    .dotContentZero {
+        // display: none;
+        width: 7px;
+        height: 7px;
+        background: rgb(66,86,122);
+        border-radius: 50%;
+        border: none;
+        position: absolute;
+        z-index: 1;
+        // color: transparent;
+        // &:hover {
+        //     background: transparent;
+        //     // border: $line-thickness solid $line-color;
+        //     // color: black;
+        // }
+    
+    }
+
+    // .dot:nth-child(1) { transform: rotate(60deg) translate(-50%, -50%); }
+    // .dot:nth-child(2) { transform: rotate(120deg) translate(-50%, -50%); }
+    // .dot:nth-child(3) { transform: rotate(180deg) translate(-50%, -50%); }
+    // .dot:nth-child(4) { transform: rotate(240deg) translate(-50%, -50%); }
+    // .dot:nth-child(5) { transform: rotate(300deg) translate(-50%, -50%); }
+    // .dot:nth-child(6) { transform: rotate(360deg) translate(-50%, -50%); }
+
+}
+
+
+
+
+
+.WheelSwitch {
+    position: absolute;
+    width: 7rem;
+    // height: 50px;
+    // border: $line-thickness solid $line-color;
+    top: 60%;
+    left: 5%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .WheelBtns {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+       
+    }
+
+}
+
+.wheelBtn {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: $line-thickness solid $line-color;
+    color: transparent;
+    transition: background 0.3s ease;
+
+    &:hover {
+        background: white;
+        
+    }
+}
+
+
+@media (max-width: 800px) {
+    .DatesWheel {
+        display: none;
+    }
+
+    .WheelSwitch {
+        
+        width: 5rem;
+        top: 90%;
+        bottom: 3%;
+        left: 5%;
+        // height: 3rem;
+    
+    }
+
+    .wheelBtn {
+        width: 2rem;
+        height: 2rem;
+    }
+    
+}

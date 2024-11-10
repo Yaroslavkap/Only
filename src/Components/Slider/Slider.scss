@@ -1,11 +1,133 @@
-
+$start-color: rgb(93,95,239);
+$label-color: rgb(66,86,122);
 
 .SliderBlock {
     position: absolute;
-    bottom: 5%;
+    top: 77%;
     width: 100%;
+
+    padding-left: 5rem;
+
+    p {
+        font-weight: 400;
+        font-size: 1rem;
+        width: 15vw;
+        color: $label-color;
+        margin-right: 3rem;
+    }
+
+    .SliderDates {
+        color: $start-color;
+        font-size: 1.25rem;
+        margin-bottom: .5rem;
+    }
+
+    .SliderSlide {
+        padding-left: 2rem;
+        padding-right: 5rem;
+    }
 }
 
 // .slide {
 //     width: 30vw;
 // }
+
+// .next-btn,
+// .swiper-button-prev {
+//     color: #ff6347; // Изменить цвет стрелок
+//     font-size: 20px; // Размер стрелок
+//     opacity: 0.8; // Прозрачность
+//     transition: opacity 0.3s;
+
+//     &:hover {
+//         opacity: 1;
+//     }
+// }
+
+
+.next-btn {
+    position: absolute;
+  top: var(--swiper-navigation-top-offset, 50%);
+  width: calc(var(--swiper-navigation-size) / 44 * 27);
+  height: var(--swiper-navigation-size);
+  margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--swiper-navigation-color, var(--swiper-theme-color));
+
+  right: var(--swiper-navigation-sides-offset, 10px);
+  left: auto;
+}
+
+
+.swiper-button-next, .swiper-button-prev {
+    background: white;
+    border-radius: 50%;
+    // width: 1100px;
+    // height: 1100px;
+    transform: scale(0.5);
+    position: absolute;
+    z-index: 2;
+    
+    // border: 1000px solid white;
+    // padding: 5px;
+    // transform: scale(0.75);
+    // overflow: hidden;
+}
+
+.swiper-button-border {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background: white;
+    border-radius: 50%;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(2);
+}
+
+
+
+@media (max-width: 800px) {
+    .SliderBlock {
+       
+        top: 52%;
+        padding-left: 0;
+       
+    
+        p {
+            font-weight: 400;
+            font-size: 1.35rem;
+        }
+    
+        .SliderDates {
+            margin-bottom: 1rem;
+            font-size: 1.35rem;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            display: none;
+        }
+
+        p {
+            width: 60vw;
+            color: $label-color;
+            margin-right: 3rem;
+        }
+
+        .slide {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+          
+            // Для тусклого эффекта у следующего слайда
+            &.swiper-slide-next {
+              opacity: 0.5; // Можно настроить нужную степень тусклости
+            }
+          }
+    }
+}
